@@ -9,16 +9,40 @@
 <body>
   <script>
     function computerPlay() {
-    let names = [
+      let names = [
         'Rock',
         'Paper',
-        'Scissor'
-    ];
+        'Scissors'
+      ];
 
-    return names[Math.floor(Math.random() * names.length)];
-}
+      return names[Math.floor(Math.random() * names.length)];
+    }
+    
+    function playRound (playerSelection, computerSelection) {
+      playerSelection = prompt("Choose Rock, Paper or Scissors:");
+      playerSelection2 = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+      computerSelection = computerPlay();
 
-console.log(computerPlay());
+      if (playerSelection2 == computerSelection) {
+        alert("It's a Draw!");
+      } else if (playerSelection2 == "Rock" && computerSelection == "Paper") {
+        alert("You loose! Paper beats Rock");
+      } else if (playerSelection2 == "Rock" && computerSelection == "Scissors") {
+        alert("You win! Rock beat Scissors");
+      } else if (playerSelection2 == "Paper" && computerSelection == "Rock") {
+        alert("You win! Paper beats Rock");
+      } else if (playerSelection2 == "Paper" && computerSelection == "Scissors") {
+        alert("You loose! Scissors beat Paper");
+      } else if (playerSelection2 == "Scissors" && computerSelection == "Rock") {
+        alert("You loose! Rock beats Scissors");
+      } else if (playerSelection2 == "Scissors" && computerSelection == "Paper") {
+        alert("You win! Scissors beat Paper");
+      } else {
+        alert ("Put in a valid option!");
+      }
+    }
+    
+    playRound();
   </script>
 </body>
 </html>
