@@ -17,32 +17,32 @@
 
       return names[Math.floor(Math.random() * names.length)];
     }
-    
+    console.log(computerPlay());
+
     function playRound (playerSelection, computerSelection) {
       playerSelection = prompt("Choose Rock, Paper or Scissors:");
       playerSelection2 = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
       computerSelection = computerPlay();
 
       if (playerSelection2 == computerSelection) {
-        alert("It's a Draw!");
+        result = ("It's a Draw!");
       } else if (playerSelection2 == "Rock" && computerSelection == "Paper") {
-        alert("You loose! Paper beats Rock");
+        result = ("You loose! Paper beats Rock");
       } else if (playerSelection2 == "Rock" && computerSelection == "Scissors") {
-        alert("You win! Rock beat Scissors");
+        result = ("You win! Rock beat Scissors");
       } else if (playerSelection2 == "Paper" && computerSelection == "Rock") {
-        alert("You win! Paper beats Rock");
+        result = ("You win! Paper beats Rock");
       } else if (playerSelection2 == "Paper" && computerSelection == "Scissors") {
-        alert("You loose! Scissors beat Paper");
+        result = ("You loose! Scissors beat Paper");
       } else if (playerSelection2 == "Scissors" && computerSelection == "Rock") {
-        alert("You loose! Rock beats Scissors");
+        result = ("You loose! Rock beats Scissors");
       } else if (playerSelection2 == "Scissors" && computerSelection == "Paper") {
-        alert("You win! Scissors beat Paper");
+        result = ("You win! Scissors beat Paper");
       } else {
-        alert ("Put in a valid option!");
-      }
+        result =  ("Put in a valid option!");
+      } return result
     }
-    
-    playRound();
+    console.log(playRound());
   </script>
 </body>
 </html>
