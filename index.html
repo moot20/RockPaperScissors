@@ -8,6 +8,8 @@
 </head>
 <body>
   <script>
+    let playerScore = 0;
+    let computerScore = 0;
 
     function computerPlay() {
       let names = [
@@ -39,7 +41,30 @@
       } return result;
     }
 
-    console.log(playRound());
+    function game() {
+      for (let i = 0; i < 5; i++) {
+        let round = playRound();
+        if (round == "win") {
+          playerScore++;
+          console.log(`You win! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
+        } else if (round == "loose") {
+          computerScore++;
+          console.log(`You loose! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
+        } else if (round == "draw") {
+          console.log(`It is a Draw! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
+        } else {
+          console.log("Invalid round due to invalid input!");
+        }
+      } if (playerScore > computerScore) {
+        console.log(`You are the Winner! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
+      } else if (playerScore < computerScore) {
+        console.log(`You are the Looser! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
+      } else {
+        console.log(`It is a Tie! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
+      }
+    }
+
+    game();
 
   </script>
 </body>
