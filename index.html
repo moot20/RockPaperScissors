@@ -5,67 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script>
-    let playerScore = 0;
-    let computerScore = 0;
-
-    function computerPlay() {
-      let names = [
-        'rock',
-        'paper',
-        'scissors'
-      ];
-      return names[Math.floor(Math.random() * names.length)];
-    }
-    
-    function playerPlay() {
-      answer1 = prompt("Pick Rock, Paper or Scissors:");
-      answer2 = answer1.toLowerCase();
-      return answer2;
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      playerSelection = playerPlay()
-      computerSelection = computerPlay();
-
-      if (playerSelection == computerSelection) {
-        result = "draw";
-      } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-        result = "win";
-      } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")) {
-        result = "loose";
-      } else {
-        result = "invalid";
-      } return result;
-    }
-
-    function game() {
-      for (let i = 0; i < 5; i++) {
-        let round = playRound();
-        if (round == "win") {
-          playerScore++;
-          console.log(`You win! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
-        } else if (round == "loose") {
-          computerScore++;
-          console.log(`You loose! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
-        } else if (round == "draw") {
-          console.log(`It is a Draw! The Score is... Player: ${playerScore}, Computer ${computerScore}`);
-        } else {
-          console.log("Invalid round due to invalid input!");
-        }
-      } if (playerScore > computerScore) {
-        console.log(`You are the Winner! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
-      } else if (playerScore < computerScore) {
-        console.log(`You are the Looser! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
-      } else {
-        console.log(`It is a Tie! The final Score is... Player: ${playerScore}, Computer ${computerScore}`);
-      }
-    }
-
-    game();
-
-  </script>
+  <div class="header">
+    <h1>Rock Paper Scissors</h1>
+  </div>
+  <h2 class="ask">Make Your Turn!</h2>
+  <div class="buttons">
+    <button class="btn">Rock</button>
+    <button class="btn">Paper</button>
+    <button class="btn">Scissors</button>
+  </div>
+  <div class="score">
+    <div class="playerScore">0</div>
+    <div>:</div>
+    <div class="computerScore">0</div>
+  </div>
+  <div class="text">
+    <p></p>
+  </div>
 </body>
 </html>
