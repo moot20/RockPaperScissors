@@ -22,7 +22,15 @@ body {
 .ask {
   color: #61707D;
   text-align: center;
-  margin: 56px 0; 
+  margin: 22px 0 12px 0;
+  font-size: 36px; 
+}
+
+h4 {
+  color: #61707D;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 56px;
 }
 
 .buttons {
@@ -55,7 +63,28 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 48px;
-  margin: 120px 0;
+  margin: 0;
   font-size: 32px;
   color: #61707D;
+}
+
+.para {
+  color: #61707D;
+  text-align: center;
+  margin: 56px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset > button {
+  font-size: 16px;
+  margin-top: 48px;
+  height: 35px;
+  width: 75px;
 }
